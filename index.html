@@ -37,3 +37,41 @@
     </select>
     <button type="submit">Wort hinzufügen</button>
 </form>
+
+
+<nav>
+    <ul>
+        <li><a href="#" onclick="showSection('lernen')">Lernen</a></li>
+        <li><a href="#" onclick="showSection('vokabeln')">Vokabeln</a></li>
+    </ul>
+</nav>
+
+<!-- Bereich für Lernen -->
+<div id="lernen-section" style="display:none;">
+    <h2>Lernen</h2>
+    <p>Wähle ein Kartenset aus, um zu lernen:</p>
+    <select id="learn-set-selector" onchange="changeSetForLearning(this.value)">
+        <option value="">Kartenset auswählen</option>
+    </select>
+    <div id="flashcards-container"></div>
+    <button id="next-card" style="display:none;">Nächste Karte</button>
+</div>
+
+<!-- Bereich für Vokabeln -->
+<div id="vokabeln-section" style="display:none;">
+    <h2>Vokabeln</h2>
+    <p>Wähle ein Kartenset aus, um alle Wörter zu sehen oder neue Wörter hinzuzufügen:</p>
+    <select id="vocab-set-selector" onchange="showWordsInSet(this.value)">
+        <option value="">Kartenset auswählen</option>
+    </select>
+    <ul id="word-list"></ul>
+
+    <!-- Formular zum Hinzufügen neuer Wörter -->
+    <h3>Neues Wort hinzufügen</h3>
+    <form id="new-word-form">
+        <input type="text" id="new-word" placeholder="Wort" required>
+        <input type="text" id="new-translation" placeholder="Übersetzung" required>
+        <button type="submit">Hinzufügen</button>
+    </form>
+</div>
+
